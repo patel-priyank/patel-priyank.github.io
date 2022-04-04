@@ -42,14 +42,9 @@ body {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   transition: all 0.3s ease;
   background-color: hsl(43, 55%, 65%);
-}
-
-.navbar.sticky {
-  padding: 1rem 0;
-  background-color: hsl(43, 50%, 60%);
 }
 
 .navbar .max-width,
@@ -190,15 +185,11 @@ body {
     right: -100%;
     min-height: 100vh;
     padding: 2rem;
-    padding-top: calc(2rem * 2 + 2.125rem + 0.5rem);
+    padding-top: 5.5rem;
     padding-right: calc(1.5rem * 6 + 3rem);
     width: fit-content;
     background-color: hsl(43, 55%, 75%);
     transition: all 0.3s ease;
-  }
-
-  .navbar.sticky .menu {
-    padding-top: calc(1rem * 2 + 2.125rem + 0.5rem);
   }
 
   .navbar .menu.active {
