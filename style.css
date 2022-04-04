@@ -108,13 +108,13 @@ body {
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
-  color: #000;
+  color: #fff;
   text-align: center;
 }
 
 .home .home-content {
   margin-top: 5rem;
-  text-shadow: 0 0 3rem #fff;
+  text-shadow: 1px 2px 0 #000, -3px -1px 0 #3cd1ea, 3px 2px 0 #fe1d6b;
 }
 
 .home .home-content .intro {
@@ -246,11 +246,11 @@ body {
   }
 
   .home .home-content .name {
-    font-size: 3.25rem;
+    font-size: 3.125rem;
   }
 
   .home .home-content .description {
-    font-size: 1.75rem;
+    font-size: 1.625rem;
   }
 }
 
