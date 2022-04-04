@@ -3,10 +3,14 @@
 /* #region colors */
 
 :root {
-  --primary-color: hsl(43, 55%, 65%);
-  --primary-variant: hsl(43, 50%, 60%);
-  --secondary-color: hsl(202, 80%, 60%);
-  --secondary-variant: hsl(202, 75%, 55%);
+  --yellow: hsl(43, 55%, 65%);
+  --yellow-dark: hsl(43, 50%, 60%);
+  --blue: hsl(202, 80%, 60%);
+  --blue-dark: hsl(202, 75%, 55%);
+  --purple: hsl(270, 60%, 80%);
+  --purple-dark: hsl(270, 55%, 75%);
+  --red: hsl(355, 85%, 55%);
+  --red-dark: hsl(355, 80%, 50%);
 }
 
 /* #endregion */
@@ -44,7 +48,7 @@ body {
   z-index: 1000;
   padding: 1.5rem 0;
   transition: all 0.3s ease;
-  background-color: hsl(43, 55%, 65%);
+  background-color: hsl(270, 60%, 80%);
 }
 
 .navbar .max-width,
@@ -188,7 +192,7 @@ body {
     padding-top: 5.5rem;
     padding-right: calc(1.5rem * 6 + 3rem);
     width: fit-content;
-    background-color: hsl(43, 55%, 75%);
+    background-color: hsl(270, 60%, 90%);
     transition: all 0.3s ease;
   }
 
