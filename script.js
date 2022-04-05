@@ -1,14 +1,17 @@
 const mainBody = document.querySelector('.main');
 const logo = document.querySelector('.logo');
+const navbarLinks = document.querySelectorAll('.navbar a');
 const themeSwitch = document.querySelector('.theme-switch');
 const menu = document.querySelector('.navbar .menu');
 const menuBtn = document.querySelector('.menu-btn');
 
-// hide slide out menu when clicking logo
-logo.addEventListener('click', () => {
-  if (menuBtn.classList.contains('active')) {
-    menuBtn.click();
-  }
+// hide slide out menu when clicking navbar links
+navbarLinks.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (menuBtn.classList.contains('active')) {
+      menuBtn.click();
+    }
+  });
 });
 
 // toggle navbar menu
