@@ -280,11 +280,11 @@ body {
     top: 0;
     right: -100%;
     min-height: 100vh;
+    margin-top: 5.75rem;
     padding: 2rem;
-    padding-top: 5.75rem;
     padding-right: calc(1.5rem * 6 + 3rem);
     width: fit-content;
-    background-color: hsl(270, 60%, 90%);
+    background-color: hsl(270, 60%, 80%);
     transition: all 0.3s ease;
   }
 
