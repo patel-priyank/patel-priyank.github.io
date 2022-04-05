@@ -136,49 +136,61 @@ body {
 
 /* #endregion */
 
-/* #region about section */
+/* #region common styling */
 
-.about {
+section {
   padding: 6.25rem 0;
-  /* background-color: hsl(270, 90%, 95%); */
+  background-color: #fff;
 }
 
-.about .about-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+section.alternate {
+  background-color: hsl(270, 90%, 97.5%);
 }
 
-.about .title {
+section .title {
   position: relative;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 3.75rem;
 }
 
-.about .title::before,
-.about .title::after {
+section .title::before,
+section .title::after {
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #a3e9f5;
 }
 
-.about .title::before {
+section .title::before {
   content: '';
   height: 5%;
   width: 100%;
 }
 
-.about .title::after {
-  content: 'who i am';
+section .title::after {
   height: fit-content;
   width: fit-content;
   color: #111;
   font-size: 1rem;
   font-weight: normal;
   padding-right: 1.5rem;
+}
+
+.about .about-content,
+.skills .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* #endregion */
+
+/* #region about section */
+
+.about .title::after {
+  content: 'who i am';
 }
 
 .about .about-content .left {
@@ -224,6 +236,44 @@ body {
 
 /* #endregion */
 
+/* #region skills section */
+
+.skills .title::after {
+  content: 'what i know';
+}
+
+.skills .skills-content .card {
+  cursor: pointer;
+  background-color: #fff;
+  width: calc(25% - 1.5rem);
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px #999;
+  transition: all 0.3s ease;
+}
+
+.skills .skills-content .card:hover {
+  box-shadow: 0 2px 4px #ee2b3b;
+}
+
+.skills .skills-content .card .box {
+  transition: all 0.3s ease;
+}
+
+.skills .skills-content .card:hover .box {
+  transform: scale(1.2);
+}
+
+.skills .skills-content img {
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+}
+
+/* #endregion */
+
 /* #region media queries */
 
 /* large */
@@ -236,6 +286,15 @@ body {
   .about .about-content .left img {
     height: 22rem;
     width: 22rem;
+  }
+
+  .skills .skills-content .card {
+    width: calc(33% - 1.5rem);
+  }
+
+  .skills .skills-content img {
+    height: 5rem;
+    width: 5rem;
   }
 }
 
@@ -347,6 +406,10 @@ body {
   .home .home-content .description {
     font-size: 2rem;
   }
+
+  .skills .skills-content .card {
+    width: calc(50% - 1rem);
+  }
 }
 
 /* extra small */
@@ -366,6 +429,10 @@ body {
 
   .home .home-content .description {
     font-size: 1.625rem;
+  }
+
+  .skills .skills-content .card {
+    width: 100%;
   }
 }
 
