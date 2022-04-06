@@ -343,10 +343,16 @@ section .title::after {
 
 .projects .projects-content .card .text {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   font-size: 1.75rem;
   font-weight: bold;
   color: #fff;
   opacity: 1;
+  height: 100%;
+  width: 100%;
   z-index: 10;
   transition: all 0.3s ease;
 }
@@ -369,13 +375,14 @@ section .title::after {
   padding: 1rem;
   transform: scale(1.15);
   opacity: 0;
-  z-index: 15;
+  z-index: 0;
   transition: all 0.3s ease;
 }
 
 .projects .projects-content .card:hover .overlay {
   transform: scale(1);
   opacity: 1;
+  z-index: 15;
 }
 
 .projects .projects-content .card .overlay a {
