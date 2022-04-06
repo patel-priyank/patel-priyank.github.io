@@ -1,5 +1,5 @@
 # ReadMe
 
-Hi! I'm finally getting around to creating my portfolio website. Try it [here](https://patel-priyank.github.io/).
+Hi! After years of procrastination, I finally created my portfolio website.
 
-It's still under construction though. :hammer:
+[Check it out](https://patel-priyank.github.io/)! :sparkles:
