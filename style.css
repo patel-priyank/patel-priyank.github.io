@@ -187,7 +187,8 @@ section .title::after {
 }
 
 .about .about-content a,
-.projects .projects-content .overlay a {
+.projects .projects-content .overlay a,
+.projects .projects-content > a {
   position: relative;
   display: inline-block;
   background-color: #ee2b3b;
@@ -199,7 +200,8 @@ section .title::after {
 }
 
 .about .about-content a .icon,
-.projects .projects-content .overlay a .icon {
+.projects .projects-content .overlay a .icon,
+.projects .projects-content > a .icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -215,7 +217,8 @@ section .title::after {
 }
 
 .about .about-content a:hover .icon,
-.projects .projects-content .overlay a:hover .icon {
+.projects .projects-content .overlay a:hover .icon,
+.projects .projects-content > a:hover .icon {
   opacity: 1;
 }
 
