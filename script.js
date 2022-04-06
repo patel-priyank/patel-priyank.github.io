@@ -1,9 +1,10 @@
 const mainBody = document.querySelector('.main');
-const logo = document.querySelector('.logo');
+const logo = document.querySelector('.logo a');
 const navbarLinks = document.querySelectorAll('.navbar a');
 const themeSwitch = document.querySelector('.theme-switch');
 const menu = document.querySelector('.navbar .menu');
 const menuBtn = document.querySelector('.menu-btn');
+const scrollUpBtn = document.querySelector('.scroll-up-btn');
 
 // hide slide out menu when clicking navbar links
 navbarLinks.forEach((item) => {
@@ -12,6 +13,20 @@ navbarLinks.forEach((item) => {
       menuBtn.click();
     }
   });
+});
+
+// show scroll up button
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollUpBtn.classList.add('show');
+  } else {
+    scrollUpBtn.classList.remove('show');
+  }
+});
+
+// scroll to top
+scrollUpBtn.addEventListener('click', () => {
+  logo.click();
 });
 
 // toggle navbar menu
