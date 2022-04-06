@@ -242,20 +242,23 @@ section .title::after {
   content: 'what i know';
 }
 
-.skills .skills-content .card {
+.skills .skills-content a {
   cursor: pointer;
   background-color: #fff;
   width: calc(25% - 1.5rem);
   text-align: center;
   border-radius: 0.5rem;
-  padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 4px #999;
   transition: all 0.3s ease;
 }
 
-.skills .skills-content .card:hover {
+.skills .skills-content a:hover {
   box-shadow: 0 2px 4px #ee2b3b;
+}
+
+.skills .skills-content .card {
+  padding: 1.5rem;
 }
 
 .skills .skills-content .card .box {
@@ -266,7 +269,7 @@ section .title::after {
   transform: scale(1.2);
 }
 
-.skills .skills-content img {
+.skills .skills-content .card img {
   height: 6rem;
   width: 6rem;
   object-fit: cover;
@@ -288,11 +291,11 @@ section .title::after {
     width: 22rem;
   }
 
-  .skills .skills-content .card {
+  .skills .skills-content a {
     width: calc(33% - 1.5rem);
   }
 
-  .skills .skills-content img {
+  .skills .skills-content .card img {
     height: 5rem;
     width: 5rem;
   }
@@ -407,7 +410,7 @@ section .title::after {
     font-size: 2rem;
   }
 
-  .skills .skills-content .card {
+  .skills .skills-content a {
     width: calc(50% - 1rem);
   }
 }
@@ -431,7 +434,7 @@ section .title::after {
     font-size: 1.625rem;
   }
 
-  .skills .skills-content .card {
+  .skills .skills-content a {
     width: 100%;
   }
 }
