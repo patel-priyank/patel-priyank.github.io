@@ -187,7 +187,7 @@ section .title::after {
 }
 
 .about .about-content a,
-.projects .projects-content a {
+.projects .projects-content .overlay a {
   position: relative;
   display: inline-block;
   background-color: #ee2b3b;
@@ -199,7 +199,7 @@ section .title::after {
 }
 
 .about .about-content a .icon,
-.projects .projects-content a .icon {
+.projects .projects-content .overlay a .icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -215,7 +215,7 @@ section .title::after {
 }
 
 .about .about-content a:hover .icon,
-.projects .projects-content a:hover .icon {
+.projects .projects-content .overlay a:hover .icon {
   opacity: 1;
 }
 
@@ -339,6 +339,15 @@ section .title::after {
 
 .projects .projects-content .card:hover img {
   transform: scale(1.15);
+}
+
+.projects .projects-content .card > a {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .projects .projects-content .card .text {
