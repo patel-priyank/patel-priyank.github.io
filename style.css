@@ -351,6 +351,7 @@ section .title::after {
   justify-content: center;
   height: 100%;
   width: 100%;
+  cursor: default;
 }
 
 .projects .projects-content .card .text {
