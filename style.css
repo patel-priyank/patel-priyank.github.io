@@ -217,7 +217,8 @@ section .title::after {
 .about .about-content a,
 .projects .projects-content .overlay a,
 .projects .projects-content > a,
-.playground .playground-content > a {
+.playground .playground-content > a,
+.contact .contact-content > a {
   position: relative;
   display: inline-block;
   background-color: #ee2b3b;
@@ -233,7 +234,8 @@ section .title::after {
 .about .about-content a .icon,
 .projects .projects-content .overlay a .icon,
 .projects .projects-content > a .icon,
-.playground .playground-content > a .icon {
+.playground .playground-content > a .icon,
+.contact .contact-content > a .icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -252,7 +254,8 @@ section .title::after {
 .about .about-content a:hover .icon,
 .projects .projects-content .overlay a:hover .icon,
 .projects .projects-content > a:hover .icon,
-.playground .playground-content > a:hover .icon {
+.playground .playground-content > a:hover .icon,
+.contact .contact-content > a:hover .icon {
   opacity: 1;
 }
 
@@ -478,6 +481,55 @@ section .title::after {
 
 .playground .playground-content .card:hover img {
   transform: scale(1.1);
+}
+
+/* #endregion */
+
+/* #region contact section */
+
+.contact {
+  background-color: #222;
+  color: #fff;
+}
+
+.contact .contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact .contact-content .text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact .contact-content .description {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.contact .contact-content .social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.contact .contact-content .social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  color: #fff;
+}
+
+.contact .contact-content .copyright {
+  text-align: center;
+  margin-top: 1.25rem;
 }
 
 /* #endregion */
