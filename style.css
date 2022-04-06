@@ -378,16 +378,6 @@ section .title::after {
   transform: scale(1.1);
 }
 
-.projects .projects-content .card > a {
-  position: absolute;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  cursor: default;
-}
-
 .projects .projects-content .card .text {
   position: absolute;
   display: flex;
@@ -411,6 +401,7 @@ section .title::after {
 
 .projects .projects-content .card .overlay {
   position: absolute;
+  top: 150%;
   height: 100%;
   width: 100%;
   display: flex;
@@ -421,13 +412,14 @@ section .title::after {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 1rem;
-  transform: scale(1.1);
+  transform: scale(2);
   opacity: 0;
   z-index: 0;
   transition: all 0.3s ease;
 }
 
 .projects .projects-content .card:hover .overlay {
+  top: 0;
   transform: scale(1);
   opacity: 1;
   z-index: 15;
