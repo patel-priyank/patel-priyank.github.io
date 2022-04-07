@@ -305,6 +305,7 @@ section .title::after {
   width: 25rem;
   object-fit: cover;
   border-radius: 0.5rem;
+  box-shadow: 0 2px 4px var(--box-shadow);
 }
 
 .about .about-content .text {
