@@ -10,9 +10,14 @@ const LIGHT_THEME = 'light';
 const DARK_THEME = 'dark';
 const SUN_ICON = 'night';
 
-// hide slide out menu when clicking navbar links
 navbarLinks.forEach((item) => {
-  item.addEventListener('click', () => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    // prevent section id from appearing in url
+    document.querySelector(item.getAttribute('href')).scrollIntoView();
+
+    // hide slide out menu when clicking navbar links
     if (menuBtn.classList.contains('active')) {
       menuBtn.click();
     }
@@ -73,5 +78,10 @@ if (currentTheme === DARK_THEME) {
 }
 
 setTheme(currentTheme);
+
+// remove section id from url on page load
+if (location.href.includes('#')) {
+  location = location.href.substring(0, location.href.indexOf('#'));
+}
 
 //#endregion
