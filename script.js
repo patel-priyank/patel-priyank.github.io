@@ -5,6 +5,7 @@ const themeSwitch = document.querySelector('.theme-switch');
 const menu = document.querySelector('.navbar .menu');
 const menuBtn = document.querySelector('.menu-btn');
 const scrollUpBtn = document.querySelector('.scroll-up-btn');
+const homeSection = document.querySelector('.home');
 
 const LIGHT_THEME = 'light';
 const DARK_THEME = 'dark';
@@ -51,10 +52,10 @@ function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   if (theme === LIGHT_THEME) {
     themeSwitch.classList.remove(SUN_ICON);
-    document.querySelector('.home').style.backgroundImage = "url('./images/banner.jpg')";
+    homeSection.style.backgroundImage = "url('./images/banner.jpg')";
   } else {
     themeSwitch.classList.add(SUN_ICON);
-    document.querySelector('.home').style.backgroundImage = "url('./images/banner-dark.jpg')";
+    homeSection.style.backgroundImage = "url('./images/banner-dark.jpg')";
   }
 }
 
