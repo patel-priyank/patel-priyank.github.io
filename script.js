@@ -45,21 +45,17 @@ function setTheme(theme) {
   localStorage.setItem('theme', theme);
   document.documentElement.setAttribute('data-theme', theme);
   if (theme === LIGHT_THEME) {
+    themeSwitch.classList.remove(SUN_ICON);
     document.querySelector('.home').style.backgroundImage = "url('./images/banner.jpg')";
   } else {
+    themeSwitch.classList.add(SUN_ICON);
     document.querySelector('.home').style.backgroundImage = "url('./images/banner-dark.jpg')";
   }
 }
 
-// toggle sun/moon icon
 themeSwitch.addEventListener('click', () => {
-  if (themeSwitch.classList.contains(SUN_ICON)) {
-    themeSwitch.classList.remove(SUN_ICON);
-    setTheme(LIGHT_THEME);
-  } else {
-    themeSwitch.classList.add(SUN_ICON);
-    setTheme(DARK_THEME);
-  }
+  const theme = themeSwitch.classList.contains(SUN_ICON) ? LIGHT_THEME : DARK_THEME;
+  setTheme(theme);
 });
 
 //#region page load
