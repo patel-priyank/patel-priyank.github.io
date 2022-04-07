@@ -268,7 +268,7 @@ section .title::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--on-secondary);
+  background-color: var(--background-alt);
   color: var(--secondary);
   border-radius: 0.5rem;
   opacity: 0;
