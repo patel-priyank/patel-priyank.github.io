@@ -82,6 +82,10 @@ body {
   pointer-events: auto;
 }
 
+.scroll-up-btn.show:hover {
+  bottom: 2.25rem;
+}
+
 /* #endregion */
 
 /* #region navbar */
