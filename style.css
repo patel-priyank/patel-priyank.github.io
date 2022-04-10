@@ -128,6 +128,7 @@ body {
   color: var(--secondary);
 }
 
+.navbar .menu-items > a,
 .theme-switch,
 .menu-btn {
   width: 1.5rem;
@@ -138,8 +139,13 @@ body {
   z-index: 1000;
 }
 
-.theme-switch {
+.navbar .menu-items > a {
   margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.theme-switch {
+  margin-right: 1.5rem;
 }
 
 .menu-btn {
@@ -613,7 +619,7 @@ section .title::after {
     z-index: 990;
   }
 
-  .navbar .theme-switch {
+  .navbar .menu-items > a {
     margin-right: 1.5rem;
   }
 

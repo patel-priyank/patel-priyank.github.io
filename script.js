@@ -1,6 +1,6 @@
 const mainBody = document.querySelector('.main');
 const logo = document.querySelector('.logo a');
-const navbarLinks = document.querySelectorAll('.navbar a');
+const navLinks = document.querySelectorAll('.logo a, .menu a');
 const themeSwitch = document.querySelector('.theme-switch');
 const menu = document.querySelector('.navbar .menu');
 const menuBtn = document.querySelector('.menu-btn');
@@ -11,7 +11,7 @@ const LIGHT_THEME = 'light';
 const DARK_THEME = 'dark';
 const SUN_ICON = 'night';
 
-navbarLinks.forEach((item) => {
+navLinks.forEach((item) => {
   item.addEventListener('click', (event) => {
     event.preventDefault();
 
