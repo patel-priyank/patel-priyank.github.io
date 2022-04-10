@@ -279,6 +279,7 @@ section .title::after {
   background-color: var(--background-alt);
   color: var(--secondary);
   border-radius: 0.5rem;
+  font-size: 1.5rem;
   opacity: 0;
   transition: all 0.3s ease;
 }
