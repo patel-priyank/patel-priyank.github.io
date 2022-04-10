@@ -60,13 +60,13 @@ function setTheme(theme) {
 }
 
 themeSwitch.addEventListener('click', () => {
-  const theme = themeSwitch.classList.contains(SUN_ICON) ? LIGHT_THEME : DARK_THEME;
+  let theme = themeSwitch.classList.contains(SUN_ICON) ? LIGHT_THEME : DARK_THEME;
   setTheme(theme);
 });
 
 //#region page load
 
-const currentTheme = localStorage.getItem('theme');
+let currentTheme = localStorage.getItem('theme');
 
 // set theme on page load
 if (currentTheme === null) {
