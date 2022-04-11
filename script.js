@@ -46,6 +46,13 @@ menuBtn.addEventListener('click', () => {
   mainBody.classList.toggle('active'); // toggle dark overlay behind slide out menu
 });
 
+// hide slide out menu when tapping on body
+mainBody.addEventListener('click', () => {
+  if (menuBtn.classList.contains('active')) {
+    menuBtn.click();
+  }
+});
+
 // switch theme
 function setTheme(theme) {
   localStorage.setItem('theme', theme);
