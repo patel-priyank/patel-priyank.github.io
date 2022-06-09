@@ -9,7 +9,20 @@ const homeSection = document.querySelector('.home');
 
 const LIGHT_THEME = 'light';
 const DARK_THEME = 'dark';
-const SUN_ICON = 'night';
+
+const NIGHT_CLASS = 'night';
+const THEME_SWITCH_CLASS = 'theme-switch';
+
+const themeConfig = {
+  light: {
+    classes: [],
+    imageUrl: './images/banner.jpg'
+  },
+  dark: {
+    classes: [NIGHT_CLASS],
+    imageUrl: './images/banner-dark.jpg'
+  }
+};
 
 navLinks.forEach((item) => {
   item.addEventListener('click', (event) => {
@@ -55,19 +68,19 @@ mainBody.addEventListener('click', () => {
 
 // switch theme
 function setTheme(theme) {
+  const currentThemeSwitchClasses = Array.from(themeSwitch.classList);
+  currentThemeSwitchClasses.forEach((className) => themeSwitch.classList.remove(className));
+
+  themeSwitch.classList.add(THEME_SWITCH_CLASS);
+  themeConfig[theme].classes.forEach((className) => themeSwitch.classList.add(className));
+  homeSection.style.backgroundImage = `url(${themeConfig[theme].imageUrl}`;
+
   localStorage.setItem('theme', theme);
   document.documentElement.setAttribute('data-theme', theme);
-  if (theme === LIGHT_THEME) {
-    themeSwitch.classList.remove(SUN_ICON);
-    homeSection.style.backgroundImage = "url('./images/banner.jpg')";
-  } else {
-    themeSwitch.classList.add(SUN_ICON);
-    homeSection.style.backgroundImage = "url('./images/banner-dark.jpg')";
-  }
 }
 
 themeSwitch.addEventListener('click', () => {
-  let theme = themeSwitch.classList.contains(SUN_ICON) ? LIGHT_THEME : DARK_THEME;
+  let theme = themeSwitch.classList.contains(NIGHT_CLASS) ? LIGHT_THEME : DARK_THEME;
   setTheme(theme);
 });
 
@@ -82,7 +95,7 @@ if (currentTheme === null) {
 }
 
 if (currentTheme === DARK_THEME) {
-  themeSwitch.classList.add(SUN_ICON);
+  themeSwitch.classList.add(NIGHT_CLASS);
 }
 
 setTheme(currentTheme);
