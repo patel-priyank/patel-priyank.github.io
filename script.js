@@ -55,7 +55,7 @@ themeSwitchBtn.addEventListener('click', switchTheme);
 scrollDownBtn.addEventListener('click', showAboutSection);
 contactSectionLinks.forEach(link => {
   link.onmousemove = event => {
-    contactSectionLinks.forEach(link => (link.style.opacity = 0.25));
+    contactSectionLinks.forEach(link => (link.style.opacity = 0.2));
     event.target.closest('a').style.opacity = 1;
   };
 
