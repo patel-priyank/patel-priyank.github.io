@@ -36,7 +36,7 @@ const switchTheme = () => {
 };
 
 // Scroll to About section
-const showAboutSection = () => aboutSection.scrollIntoView({ behavior: 'smooth' });
+const showAboutSection = () => aboutSection.scrollIntoView();
 
 // Card gradient
 skillCardsContainer.onmousemove = event => {
