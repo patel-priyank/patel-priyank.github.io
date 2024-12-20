@@ -21,9 +21,12 @@
   --purple-alt: #e1c2ff;
   --text: #000000;
   --card-border: #0000001a;
-  --card-glow-java: #ed8b00cc;
-  --card-glow-javascript: #efdb50cc;
-  --card-glow-css: #663399cc;
+  --card-glow-java: #ed8b0077;
+  --card-glow-javascript: #efdb5077;
+  --card-glow-css: #66339977;
+  --card-glow-angular: #f3268577;
+  --card-glow-react: #61dafb77;
+  --card-glow-git: #f03c2f77;
   --card-background: #e6e6e61a;
 }
 
@@ -48,9 +51,12 @@
   --purple-alt: #5a0f9e;
   --text: #ffffff;
   --card-border: #ffffff1a;
-  --card-glow-java: #ffaa33cc;
-  --card-glow-javascript: #efdb50cc;
-  --card-glow-css: #cc99ffcc;
+  --card-glow-java: #ed8b00;
+  --card-glow-javascript: #efdb50;
+  --card-glow-css: #663399;
+  --card-glow-angular: #f32685;
+  --card-glow-react: #61dafb;
+  --card-glow-git: #f03c2f;
   --card-background: #171717cc;
 }
 
@@ -304,6 +310,33 @@ section {
         background: radial-gradient(
           600px circle at var(--mouse-x) var(--mouse-y),
           var(--card-glow-css),
+          transparent 40%
+        );
+        z-index: 20;
+      }
+
+      &.angular::after {
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          var(--card-glow-angular),
+          transparent 40%
+        );
+        z-index: 20;
+      }
+
+      &.react::after {
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          var(--card-glow-react),
+          transparent 40%
+        );
+        z-index: 20;
+      }
+
+      &.git::after {
+        background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          var(--card-glow-git),
           transparent 40%
         );
         z-index: 20;
