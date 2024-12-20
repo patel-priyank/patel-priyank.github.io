@@ -28,6 +28,9 @@
   --card-glow-react: #0a7ea377;
   --card-glow-git: #f03c2f77;
   --card-background: #e6e6e640;
+
+  --navbar-height: 5rem;
+  --contact-arrow-bottom-margin: 115%;
 }
 
 [data-theme='dark'] {
@@ -98,7 +101,11 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  height: 5rem;
+  height: var(--navbar-height);
+
+  button {
+    font-size: 1.5rem;
+  }
 
   .menu {
     display: flex;
@@ -136,10 +143,6 @@ nav {
     z-index: 150;
     backdrop-filter: blur(50px);
   }
-
-  button {
-    font-size: 1.5rem;
-  }
 }
 
 /* Animating Blobs */
@@ -172,6 +175,7 @@ section {
 
 .section-container {
   z-index: 10;
+  margin-top: var(--navbar-height);
   text-align: center;
 }
 
@@ -186,17 +190,6 @@ section {
     background-color: var(--green);
   }
 
-  .scroll-down-button {
-    position: absolute;
-    font-size: 1.5rem;
-    bottom: 2.5rem;
-
-    .fa-angles-down {
-      animation: scroll-down 5s ease-in-out 5s infinite;
-      padding-bottom: 0;
-    }
-  }
-
   .hello {
     font-size: 7.5rem;
     margin: 0;
@@ -206,6 +199,17 @@ section {
     font-size: 5rem;
     margin: 0;
     margin-top: 1rem;
+  }
+
+  .scroll-down-button {
+    position: absolute;
+    font-size: 1.5rem;
+    bottom: 2.5rem;
+
+    .fa-angles-down {
+      animation: scroll-down 5s ease-in-out 5s infinite;
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -232,6 +236,10 @@ section {
         height: 100%;
       }
     }
+
+    .about {
+      text-align: start;
+    }
   }
 }
 
@@ -253,8 +261,12 @@ section {
     max-width: 1500px;
     justify-content: center;
 
-    &:hover > .skill-card::after {
-      opacity: 1;
+    &:hover {
+      .skill-card {
+        &::after {
+          opacity: 1;
+        }
+      }
     }
 
     .skill-card {
@@ -264,16 +276,15 @@ section {
       width: 400px;
       position: relative;
 
-      a {
-        transition: transform 0.3s;
-      }
+      &:hover {
+        &::before,
+        &::after {
+          opacity: 1;
+        }
 
-      &:hover::before {
-        opacity: 1;
-      }
-
-      &:hover a {
-        transform: scale(1.25) rotate(1.5deg);
+        a {
+          transform: scale(1.15) rotate(1.5deg);
+        }
       }
 
       &::before,
@@ -343,25 +354,31 @@ section {
         z-index: 20;
       }
 
-      & > .card-content {
+      .card-content {
         position: absolute;
         background-color: var(--card-background);
         border-radius: inherit;
-        inset: 1px;
+        inset: 2px;
         z-index: 40;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 72px;
+        padding: 24px;
 
         a {
           height: 100%;
           width: 100%;
-        }
+          padding: 48px;
+          display: inline-flex;
+          box-sizing: border-box;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s;
 
-        img {
-          height: 100%;
-          aspect-ratio: 1;
+          img {
+            height: 100%;
+            aspect-ratio: 1;
+          }
         }
       }
     }
@@ -403,8 +420,6 @@ section {
       position: relative;
       transition: opacity 0.5s;
 
-      --distance-from-bottom: 115%;
-
       .name {
         height: 1rem;
         width: auto;
@@ -414,14 +429,14 @@ section {
         color: var(--background);
         font-size: 1.25rem;
         position: absolute;
-        bottom: calc(var(--distance-from-bottom) + 15px);
+        bottom: calc(var(--contact-arrow-bottom-margin) + 15px);
         display: none;
         white-space: nowrap;
       }
 
       .arrow {
         position: absolute;
-        bottom: var(--distance-from-bottom);
+        bottom: var(--contact-arrow-bottom-margin);
         width: 0;
         height: 0;
         border-left: 10px solid transparent;
@@ -435,13 +450,15 @@ section {
         border-radius: 16px;
       }
 
-      &:hover .name,
-      &:hover .arrow {
-        display: block;
-      }
+      &:hover {
+        * {
+          animation: bounce 1s;
+        }
 
-      &:hover * {
-        animation: bounce 1s;
+        .name,
+        .arrow {
+          display: block;
+        }
       }
     }
   }
