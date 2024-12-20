@@ -3,18 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
+    <title>Priyank Patel</title>
     <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=github.com" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- Nav -->
+    <nav>
+      <div class="menu">
+        <ul>
+          <li><a href="">Home</a></li>
+        </ul>
+
+        <ul id="nav-links">
+          <li>
+            <button type="button" id="theme-switch-button" title="Switch to dark mode">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="blur"></div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="blob-1"></div>
+      <div class="blob-2"></div>
+      <div class="section-container">
+        <h1 class="hello">Hello!</h1>
+        <h2 class="introduction">I'm Priyank</h2>
+      </div>
+
+      <button type="button" class="scroll-down-button" id="scroll-down-button">
+        <i class="fa-solid fa-angles-down"></i>
+      </button>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about-section">
+      <div class="blob-1"></div>
+      <div class="blob-2"></div>
+      <div class="section-container">About</div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills-section">
+      <div class="blob-1"></div>
+      <div class="blob-2"></div>
+      <div class="section-container">
+        <div class="skill-cards-container" id="skill-cards-container">
+          <div class="skill-card java">
+            <div class="card-content">
+              <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank" title="Java">
+                <img src="./skills/java.png" alt="Java" />
+              </a>
+            </div>
+          </div>
+          <div class="skill-card javascript">
+            <div class="card-content">
+              <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" title="JavaScript">
+                <img src="./skills/javascript.png" alt="JavaScript" />
+              </a>
+            </div>
+          </div>
+          <div class="skill-card css">
+            <div class="card-content">
+              <a href="https://en.wikipedia.org/wiki/CSS" target="_blank" title="CSS">
+                <img src="./skills/css.png" alt="CSS" />
+              </a>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="card-content">Angular</div>
+          </div>
+          <div class="skill-card">
+            <div class="card-content">React</div>
+          </div>
+          <div class="skill-card">
+            <div class="card-content">Git</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-section">
+      <div class="blob-1"></div>
+      <div class="blob-2"></div>
+      <div class="section-container">Projects</div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact-section">
+      <div class="blob-1"></div>
+      <div class="blob-2"></div>
+      <div class="section-container">
+        <a href="mailto:patel23priyank@gmail.com" target="_blank">
+          <div class="name">Email</div>
+          <div class="arrow"></div>
+          <img src="./contact/email.png" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/patel23priyank/" target="_blank">
+          <div class="name">LinkedIn</div>
+          <div class="arrow"></div>
+          <img src="./contact/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://www.instagram.com/_ig.priyank/" target="_blank">
+          <div class="name">Instagram</div>
+          <div class="arrow"></div>
+          <img src="./contact/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://github.com/patel-priyank?tab=repositories&q=&type=&language=&sort=name" target="_blank">
+          <div class="name">GitHub</div>
+          <div class="arrow"></div>
+          <img src="./contact/github.png" alt="GitHub" />
+        </a>
+        <a href="./cv-priyank.pdf" target="_blank">
+          <div class="name">Curriculum Vitae</div>
+          <div class="arrow"></div>
+          <img src="./contact/curriculum-vitae.png" alt="Curriculum Vitae" />
+        </a>
+      </div>
+    </section>
+
     <!-- Script -->
     <script src="./script.js"></script>
   </body>
