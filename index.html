@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priyank Patel</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Detect touchscreen device -->
+    <script type="text/javascript">
+      if ('ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)) {
+        document.querySelector('body').classList.add('touch');
+      }
+    </script>
+
+    <nav class="nav">
+      <div class="menu">
+        <a href="" class="home">Hello!</a>
+        <ul>
+          <li>
+            <button type="button" id="theme-switch-button" title="Switch to dark mode">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-blur"></div>
+    </nav>
+
+    <section class="hero-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-body">
+          <h1 class="hello">
+            <span>Hello!</span>
+            <img class="santa-hat" id="santa-hat" src="./images/santa-hat.png" alt="Santa Hat" />
+          </h1>
+          <h2 class="introduction">I'm Priyank</h2>
+        </div>
+      </div>
+      <button type="button" class="scroll-down-button hide" id="scroll-down-button" title="Scroll down">
+        <img src="./images/scroll-down.gif" alt="Scroll down" />
+      </button>
+    </section>
+
+    <section class="about-section" id="about-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">About</div>
+        <div class="section-body">
+          <div class="photo" id="photo">
+            <img src="./assets/photo.jpg" alt="Profile photo" />
+          </div>
+          <div class="about-text" id="about-text">
+            <p>
+              I'm a software developer with 5+ years of experience crafting user-centric solutions and am currently
+              pursuing an MSc in Software Development. My journey has taken me from full-stack to frontend development,
+              collaborating with amazing teams across industries like Oil & Gas and Food & Beverages.
+            </p>
+            <p>
+              These days, I'm diving deeper into computing fundamentals and am constantly on the lookout for creative
+              challenges! Beyond code, I enjoy doodling quirky stuff, capturing moments through photography, and, of
+              course, indulging in a good cat video binge on YouTube. Whether I'm exploring new styles in my sketches or
+              finding the perfect shot through my camera lens, I love letting creativity take the lead.
+            </p>
+            <p>
+              Feel free to explore my work and projects – I'd love to hear your thoughts or collaborate on something
+              exciting. Let's build something incredible together!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">Skills</div>
+        <div class="section-body">
+          <div class="skill-cards-container" id="skill-cards-container">
+            <div class="skill-card java" title="Java">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">
+                  <img src="./skills/java.png" alt="Java" />
+                </a>
+              </div>
+            </div>
+            <div class="skill-card javascript" title="JavaScript">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">
+                  <img src="./skills/javascript.png" alt="JavaScript" />
+                </a>
+              </div>
+            </div>
+            <div class="skill-card css" title="CSS">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/CSS" target="_blank">
+                  <img src="./skills/css.png" alt="CSS" />
+                </a>
+              </div>
+            </div>
+            <div class="skill-card angular" title="Angular">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/Angular_(web_framework)" target="_blank">
+                  <img src="./skills/angular.png" alt="Angular" />
+                </a>
+              </div>
+            </div>
+            <div class="skill-card react" title="React">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/React_(software)" target="_blank">
+                  <img src="./skills/react.png" alt="React" />
+                </a>
+              </div>
+            </div>
+            <div class="skill-card git" title="Git">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/Git" target="_blank">
+                  <img src="./skills/git.png" alt="Git" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">Projects</div>
+        <div class="section-body">
+          <div class="project-cards-container">
+            <div class="project-card" title="Email Signatures">
+              <a href="https://github.com/patel-priyank/Email-Signatures" target="_blank">
+                <img src="./projects/email-signatures.jpg" alt="Email Signatures" />
+                <span>Email Signatures</span>
+              </a>
+            </div>
+            <div class="project-card" title="Infinite Wallpapers">
+              <a href="https://github.com/patel-priyank/Infinite-Wallpapers" target="_blank">
+                <img src="./projects/infinite-wallpapers.jpg" alt="Infinite Wallpapers" />
+                <span>Infinite Wallpapers</span>
+              </a>
+            </div>
+            <div class="project-card" title="Password Generator">
+              <a href="https://github.com/patel-priyank/Password-Generator" target="_blank">
+                <img src="./projects/password-generator.jpg" alt="Password Generator" />
+                <span>Password Generator</span>
+              </a>
+            </div>
+            <div class="project-card" title="Picture in Picture">
+              <a href="https://github.com/patel-priyank/Picture-In-Picture" target="_blank">
+                <img src="./projects/picture-in-picture.jpg" alt="Picture in Picture" />
+                <span>Picture in Picture</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">Contact</div>
+        <div class="section-body">
+          <a href="mailto:patel23priyank@gmail.com" target="_blank" title="Email">
+            <div class="name">Email</div>
+            <div class="arrow"></div>
+            <img src="./contact/email.png" alt="Email" />
+          </a>
+          <a
+            href="https://github.com/patel-priyank?tab=repositories&q=&type=&language=&sort=name"
+            target="_blank"
+            title="GitHub"
+          >
+            <div class="name">GitHub</div>
+            <div class="arrow"></div>
+            <img src="./contact/github.png" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/patel23priyank/" target="_blank" title="LinkedIn">
+            <div class="name">LinkedIn</div>
+            <div class="arrow"></div>
+            <img src="./contact/linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="https://www.instagram.com/_ig.priyank/" target="_blank" title="Instagram">
+            <div class="name">Instagram</div>
+            <div class="arrow"></div>
+            <img src="./contact/instagram.png" alt="Instagram" />
+          </a>
+          <a href="./assets/cv-priyank.pdf" target="_blank" title="Curriculum Vitae">
+            <div class="name">Curriculum Vitae</div>
+            <div class="arrow"></div>
+            <img src="./contact/curriculum-vitae.png" alt="Curriculum Vitae" />
+          </a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" title="YouTube">
+            <div class="name">YouTube</div>
+            <div class="arrow"></div>
+            <img src="./contact/youtube.png" alt="YouTube" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>
