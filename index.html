@@ -1,354 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priyank Patel</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Detect touchscreen device -->
+    <script type="text/javascript">
+      if ('ontouchstart' in window || (window.DocumentTouch && document instanceof DocumentTouch)) {
+        document.querySelector('body').classList.add('touch');
+      }
+    </script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Priyank Patel | Web Developer</title>
-  <link rel="icon" type="image/png" href="./favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css" />
-</head>
-
-<body>
-  <div class="scroll-up-btn" title="Scroll to top">
-    <i class="fa-solid fa-angle-up"></i>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="max-width">
-      <div class="logo"><a href="#home">Priyank</a></div>
-      <div class="menu-items">
-        <span class="theme-switch" title="Switch theme"><i class="fa-solid fa-moon"></i></span>
-        <a href="https://github.com/patel-priyank" target="_blank" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <ul class="menu">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#playground">Playground</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <nav class="nav">
+      <div class="menu">
+        <a href="" class="home">Hello!</a>
+        <ul>
+          <li>
+            <button type="button" id="theme-switch-button" title="Switch to dark mode">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
         </ul>
-        <div class="menu-btn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
       </div>
-    </div>
-  </nav>
+      <div class="nav-blur"></div>
+    </nav>
 
-  <div class="main">
-    <!-- Home Section -->
-    <section class="home" id="home">
-      <div class="max-width">
-        <div class="home-content">
-          <div class="intro">Hello, my name is</div>
-          <div class="name">Priyank Patel</div>
-          <div class="description">And I'm a Web Developer</div>
+    <section class="hero-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-body">
+          <h1 class="hello">
+            <span>Hello!</span>
+            <img class="santa-hat" id="santa-hat" src="./images/santa-hat.png" alt="Santa Hat" />
+          </h1>
+          <h2 class="introduction">I'm Priyank</h2>
         </div>
       </div>
+      <button type="button" class="scroll-down-button hide" id="scroll-down-button" title="Scroll down">
+        <img src="./images/scroll-down.gif" alt="Scroll down" />
+      </button>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="max-width">
-        <h2 class="title">About me</h2>
-        <div class="about-content">
-          <div class="column left">
-            <img src="./images/profile.jpg" alt="profile photo">
+    <section class="about-section" id="about-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">About</div>
+        <div class="section-body">
+          <div class="photo" id="photo">
+            <img src="./assets/photo.jpg" alt="Profile photo" />
           </div>
-          <div class="column right">
-            <div class="text">Hi, I'm Priyank</div>
-            <p class="description">If there's anything my school and college lives have taught me, it's to know
-              everything. Even a little is fine. But not nothing. So that's what I did. I tried writing stories.
-              Building robots. Making presentations. Teaching. Learning a new language. Making websites. Making apps.
-              Making friends. Photography. Doodling. Graphic design. Video editing. You name it. Now, as you see, I am
-              better at some of these than others. But looking back, I can say with confidence that I tried.</p>
-            <p class="description">Now, I drink coffee and make websites. I also draw and sometimes click pictures. Oh,
-              but mostly I just watch cat videos on Instagram. 😸</p>
-            <a href="./resume-priyank.pdf" target="_blank">
-              <span>Download Resume</span>
-              <div class="icon"><i class="fa-solid fa-file"></i></div>
-            </a>
+          <div class="about-text" id="about-text">
+            <p>
+              I'm a software developer with 5+ years of experience crafting user-centric solutions and am currently
+              pursuing an MSc in Software Development. My journey has taken me from full-stack to frontend development,
+              collaborating with amazing teams across industries like Oil & Gas and Food & Beverages.
+            </p>
+            <p>
+              These days, I'm diving deeper into computing fundamentals and am constantly on the lookout for creative
+              challenges! Beyond code, I enjoy doodling quirky stuff, capturing moments through photography, and, of
+              course, indulging in a good cat video binge on YouTube. Whether I'm exploring new styles in my sketches or
+              finding the perfect shot through my camera lens, I love letting creativity take the lead.
+            </p>
+            <p>
+              Feel free to explore my work and projects – I'd love to hear your thoughts or collaborate on something
+              exciting. Let's build something incredible together!
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills alternate" id="skills">
-      <div class="max-width">
-        <h2 class="title">Skills</h2>
-        <div class="skills-content">
-          <a href="https://www.w3schools.com/html/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/html.png" alt="html">
-              </div>
-            </div>
-          </a>
-          <a href="https://www.w3schools.com/css/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/css.png" alt="css">
-              </div>
-            </div>
-          </a>
-          <a href="https://sass-lang.com/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/sass.png" alt="sass">
-              </div>
-            </div>
-          </a>
-          <a href="https://getbootstrap.com/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/bootstrap.png" alt="bootstrap">
-              </div>
-            </div>
-          </a>
-          <a href="https://www.javascript.com/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/javascript.png" alt="javascript">
-              </div>
-            </div>
-          </a>
-          <a href="https://www.typescriptlang.org/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/typescript.png" alt="typescript">
-              </div>
-            </div>
-          </a>
-          <a href="https://angular.io/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/angular.png" alt="angular">
-              </div>
-            </div>
-          </a>
-          <a href="https://git-scm.com/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/git.png" alt="git">
-              </div>
-            </div>
-          </a>
-          <a href="https://www.android.com/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/android.png" alt="android">
-              </div>
-            </div>
-          </a>
-          <a href="https://en.wikipedia.org/wiki/Adobe_Illustrator" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/illustrator.png" alt="illustrator">
-              </div>
-            </div>
-          </a>
-          <a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/photoshop.png" alt="photoshop">
-              </div>
-            </div>
-          </a>
-          <a href="https://www.linux.org/" target="_blank">
-            <div class="card">
-              <div class="box">
-                <img src="./images/skills/linux.png" alt="linux">
-              </div>
-            </div>
-          </a>
-        </div>
+    <section class="skills-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-      <div class="max-width">
-        <h2 class="title">Projects</h2>
-        <div class="projects-content">
-          <div class="cards">
-            <div class="card">
-              <img src="./images/projects/password-generator.jpg" alt="password-generator">
-              <div class="text">Password Generator</div>
-              <div class="overlay">
-                <span class="description">A password generating web application to generate secure and different
-                  passwords for every website.</span>
-                <a href="https://patel-priyank.github.io/Password-Generator/" target="_blank">
-                  <span>Check it out!</span>
-                  <div class="icon"><i class="fa-solid fa-eye"></i></div>
+      <div class="section-container">
+        <div class="section-title">Skills</div>
+        <div class="section-body">
+          <div class="skill-cards-container" id="skill-cards-container">
+            <div class="skill-card java" title="Java">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">
+                  <img src="./skills/java.png" alt="Java" />
                 </a>
               </div>
             </div>
-            <div class="card">
-              <img src="./images/projects/whatschat-web.jpg" alt="whatschat-web">
-              <div class="text">WhatsChat Web</div>
-              <div class="overlay">
-                <span class="description">Initiate a WhatsApp chat with anyone without saving their number!</span>
-                <a href="https://patel-priyank.github.io/WhatsChat-Web/" target="_blank">
-                  <span>Check it out!</span>
-                  <div class="icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="skill-card javascript" title="JavaScript">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">
+                  <img src="./skills/javascript.png" alt="JavaScript" />
                 </a>
               </div>
             </div>
-            <div class="card">
-              <img src="./images/projects/pastel-color-generator.jpg" alt="pastel-color-generator">
-              <div class="text">Pastel Color Generator</div>
-              <div class="overlay">
-                <span class="description">Who doesn't like Pastel colors? This app generates random pastel colors for
-                  you to copy and use.</span>
-                <a href="https://patel-priyank.github.io/Pastel-Color-Generator/" target="_blank">
-                  <span>Check it out!</span>
-                  <div class="icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="skill-card css" title="CSS">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/CSS" target="_blank">
+                  <img src="./skills/css.png" alt="CSS" />
                 </a>
               </div>
             </div>
-            <div class="card">
-              <img src="./images/projects/clock.jpg" alt="clock">
-              <div class="text">Clock</div>
-              <div class="overlay">
-                <span class="description">It's a clock??!? What else do you need to know?</span>
-                <a href="https://patel-priyank.github.io/Clock/" target="_blank">
-                  <span>Check it out!</span>
-                  <div class="icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="skill-card angular" title="Angular">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/Angular_(web_framework)" target="_blank">
+                  <img src="./skills/angular.png" alt="Angular" />
                 </a>
               </div>
             </div>
-            <div class="card">
-              <img src="./images/projects/joke-teller.jpg" alt="joke-teller">
-              <div class="text">Joke Teller</div>
-              <div class="overlay">
-                <span class="description">It's a clean looking application that tells jokes. Funniness not
-                  guaranteed.</span>
-                <a href="https://patel-priyank.github.io/Joke-Teller/" target="_blank">
-                  <span>Check it out!</span>
-                  <div class="icon"><i class="fa-solid fa-eye"></i></div>
+            <div class="skill-card react" title="React">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/React_(software)" target="_blank">
+                  <img src="./skills/react.png" alt="React" />
+                </a>
+              </div>
+            </div>
+            <div class="skill-card git" title="Git">
+              <div class="card-content">
+                <a href="https://en.wikipedia.org/wiki/Git" target="_blank">
+                  <img src="./skills/git.png" alt="Git" />
                 </a>
               </div>
             </div>
           </div>
-          <a href="https://github.com/patel-priyank?tab=repositories" target="_blank">
-            <span>All Projects</span>
-            <div class="icon"><i class="fa-brands fa-github"></i></div>
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- Playground Section -->
-    <section class="playground alternate" id="playground">
-      <div class="max-width">
-        <h2 class="title">Playground</h2>
-        <div class="playground-content">
-          <div class="cards">
-            <div class="card">
-              <a href="https://www.instagram.com/p/CU4pHyVPNt6/" target="_blank">
-                <img src="./images/playground/lemon-doodle.jpg" alt="lemon-doodle">
+    <section class="projects-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">Projects</div>
+        <div class="section-body">
+          <div class="project-cards-container">
+            <div class="project-card" title="Email Signatures">
+              <a href="https://github.com/patel-priyank/Email-Signatures" target="_blank">
+                <img src="./projects/email-signatures.jpg" alt="Email Signatures" />
+                <span>Email Signatures</span>
               </a>
             </div>
-            <div class="card">
-              <a href="https://www.instagram.com/_ig.priyank/" target="_blank">
-                <img src="./images/playground/colorful-laptop.jpg" alt="colorful-laptop">
+            <div class="project-card" title="Infinite Wallpapers">
+              <a href="https://github.com/patel-priyank/Infinite-Wallpapers" target="_blank">
+                <img src="./projects/infinite-wallpapers.jpg" alt="Infinite Wallpapers" />
+                <span>Infinite Wallpapers</span>
               </a>
             </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CJI2igYBujE/" target="_blank">
-                <img src="./images/playground/camping-doodle.jpg" alt="camping-doodle">
+            <div class="project-card" title="Password Generator">
+              <a href="https://github.com/patel-priyank/Password-Generator" target="_blank">
+                <img src="./projects/password-generator.jpg" alt="Password Generator" />
+                <span>Password Generator</span>
               </a>
             </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CMmb3JQBzq7/" target="_blank">
-                <img src="./images/playground/hourglass-doodle.jpg" alt="hourglass-doodle">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/_ig.priyank/" target="_blank">
-                <img src="./images/playground/sunflowers.jpg" alt="sunflowers">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CKlv5tsBZCE/" target="_blank">
-                <img src="./images/playground/cat.jpg" alt="cat">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CN2i5hZhYGI/" target="_blank">
-                <img src="./images/playground/whale-doodle.jpg" alt="whale-doodle">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CTjs7__rU6z/" target="_blank">
-                <img src="./images/playground/enjoy-today-doodle.jpg" alt="enjoy-today-doodle">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CLJHeENhm0Y/" target="_blank">
-                <img src="./images/playground/red-flowers.jpg" alt="red-flowers">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CY4YSu_P8JF/" target="_blank">
-                <img src="./images/playground/calm-girl-doodle.jpg" alt="calm-girl-doodle">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CUrxJeSvdH4/" target="_blank">
-                <img src="./images/playground/skull-flowers-doodle.jpg" alt="skull-flowers-doodle">
-              </a>
-            </div>
-            <div class="card">
-              <a href="https://www.instagram.com/p/CJa_7ogh4W_/" target="_blank">
-                <img src="./images/playground/holding-planets-doodle.jpg" alt="holding-planets-doodle">
+            <div class="project-card" title="Picture in Picture">
+              <a href="https://github.com/patel-priyank/Picture-In-Picture" target="_blank">
+                <img src="./projects/picture-in-picture.jpg" alt="Picture in Picture" />
+                <span>Picture in Picture</span>
               </a>
             </div>
           </div>
-          <a href="https://www.instagram.com/_ig.priyank/" target="_blank">
-            <span>Instagram</span>
-            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact-section">
+      <div class="blob-container">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="section-title">Contact</div>
+        <div class="section-body">
+          <a href="mailto:patel23priyank@gmail.com" target="_blank" title="Email">
+            <div class="name">Email</div>
+            <div class="arrow"></div>
+            <img src="./contact/email.png" alt="Email" />
+          </a>
+          <a
+            href="https://github.com/patel-priyank?tab=repositories&q=&type=&language=&sort=name"
+            target="_blank"
+            title="GitHub"
+          >
+            <div class="name">GitHub</div>
+            <div class="arrow"></div>
+            <img src="./contact/github.png" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/patel23priyank/" target="_blank" title="LinkedIn">
+            <div class="name">LinkedIn</div>
+            <div class="arrow"></div>
+            <img src="./contact/linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="https://www.instagram.com/_ig.priyank/" target="_blank" title="Instagram">
+            <div class="name">Instagram</div>
+            <div class="arrow"></div>
+            <img src="./contact/instagram.png" alt="Instagram" />
+          </a>
+          <a href="./assets/cv-priyank.pdf" target="_blank" title="Curriculum Vitae">
+            <div class="name">Curriculum Vitae</div>
+            <div class="arrow"></div>
+            <img src="./contact/curriculum-vitae.png" alt="Curriculum Vitae" />
+          </a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" title="YouTube">
+            <div class="name">YouTube</div>
+            <div class="arrow"></div>
+            <img src="./contact/youtube.png" alt="YouTube" />
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section / Footer -->
-    <section class="contact" id="contact">
-      <div class="max-width">
-        <div class="contact-content">
-          <div class="text">Get in touch</div>
-          <div class="description">Feel free to contact me if you require my expert opinion.</div>
-          <a href="mailto:patel23priyank@gmail.com" target="_blank">
-            <span>Email me</span>
-            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-          </a>
-          <div class="social">
-            <a href="https://github.com/patel-priyank" target="_blank" title="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/patel23priyank/" target="_blank" title="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/_ig.priyank/" target="_blank" title="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/priyankp23" target="_blank" title="Twitter">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-          </div>
-          <div class="copyright"><i class="fa-regular fa-copyright"></i> 2022 Priyank. All rights reserved.</div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Script -->
-  <script src="./script.js"></script>
-</body>
-
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
 </html>
