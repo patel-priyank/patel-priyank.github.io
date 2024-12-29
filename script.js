@@ -140,9 +140,7 @@ currentTheme ? setTheme(currentTheme) : setTheme(LIGHT_THEME);
 santaHat.hidden = new Date().getMonth() !== 11;
 
 // On load - show scroll down button after delay
-setTimeout(() => {
-  scrollDownBtn.classList.remove('hide');
-}, 5000);
+setTimeout(() => scrollDownBtn.classList.remove('hide'), 5000);
 
-// On load - update photo height
-updatePhotoHeight();
+// On load - update photo height after slight delay
+setTimeout(() => updatePhotoHeight(), 100);
