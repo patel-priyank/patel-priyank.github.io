@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <title>Priyank Patel</title>
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
@@ -27,7 +27,7 @@
           </li>
         </ul>
       </div>
-      <div class="nav-blur"></div>
+      <div class="blur"></div>
     </nav>
 
     <section class="hero-section">
@@ -39,7 +39,7 @@
         <div class="section-body">
           <h1 class="hello">
             <span>Hello!</span>
-            <img class="santa-hat" id="santa-hat" src="./images/santa-hat.png" alt="Santa Hat" />
+            <img class="santa-hat" id="santa-hat" src="./images/santa-hat.png" alt="Santa Hat" hidden />
           </h1>
           <h2 class="introduction">I'm Priyank</h2>
         </div>
@@ -57,7 +57,7 @@
       <div class="section-container">
         <div class="section-title">About</div>
         <div class="section-body">
-          <div class="photo" id="photo">
+          <div class="about-photo" id="about-photo">
             <img src="./assets/photo.jpg" alt="Profile photo" />
           </div>
           <div class="about-text" id="about-text">
@@ -73,8 +73,8 @@
               finding the perfect shot through my camera lens, I love letting creativity take the lead.
             </p>
             <p>
-              Feel free to explore my work and projects – I'd love to hear your thoughts or collaborate on something
-              exciting. Let's build something incredible together!
+              Feel free to explore my work – I'd love to hear your thoughts or collaborate on something exciting. Let's
+              build something incredible together!
             </p>
           </div>
         </div>
@@ -145,29 +145,33 @@
       <div class="section-container">
         <div class="section-title">Projects</div>
         <div class="section-body">
-          <div class="project-cards-container">
-            <div class="project-card" title="Email Signatures">
+          <div class="project-cards-container" id="project-cards-container">
+            <div class="project-card">
               <a href="https://github.com/patel-priyank/Email-Signatures" target="_blank">
                 <img src="./projects/email-signatures.jpg" alt="Email Signatures" />
                 <span>Email Signatures</span>
+                <div class="glare"></div>
               </a>
             </div>
-            <div class="project-card" title="Infinite Wallpapers">
+            <div class="project-card">
               <a href="https://github.com/patel-priyank/Infinite-Wallpapers" target="_blank">
                 <img src="./projects/infinite-wallpapers.jpg" alt="Infinite Wallpapers" />
                 <span>Infinite Wallpapers</span>
+                <div class="glare"></div>
               </a>
             </div>
-            <div class="project-card" title="Password Generator">
+            <div class="project-card">
               <a href="https://github.com/patel-priyank/Password-Generator" target="_blank">
                 <img src="./projects/password-generator.jpg" alt="Password Generator" />
                 <span>Password Generator</span>
+                <div class="glare"></div>
               </a>
             </div>
-            <div class="project-card" title="Picture in Picture">
+            <div class="project-card">
               <a href="https://github.com/patel-priyank/Picture-In-Picture" target="_blank">
                 <img src="./projects/picture-in-picture.jpg" alt="Picture in Picture" />
                 <span>Picture in Picture</span>
+                <div class="glare"></div>
               </a>
             </div>
           </div>
@@ -184,8 +188,7 @@
         <div class="section-title">Contact</div>
         <div class="section-body">
           <a href="mailto:patel23priyank@gmail.com" target="_blank" title="Email">
-            <div class="name">Email</div>
-            <div class="arrow"></div>
+            <span class="caption">Email</span>
             <img src="./contact/email.png" alt="Email" />
           </a>
           <a
@@ -193,28 +196,23 @@
             target="_blank"
             title="GitHub"
           >
-            <div class="name">GitHub</div>
-            <div class="arrow"></div>
+            <span class="caption">GitHub</span>
             <img src="./contact/github.png" alt="GitHub" />
           </a>
           <a href="https://www.linkedin.com/in/patel23priyank/" target="_blank" title="LinkedIn">
-            <div class="name">LinkedIn</div>
-            <div class="arrow"></div>
+            <span class="caption">LinkedIn</span>
             <img src="./contact/linkedin.png" alt="LinkedIn" />
           </a>
           <a href="https://www.instagram.com/_ig.priyank/" target="_blank" title="Instagram">
-            <div class="name">Instagram</div>
-            <div class="arrow"></div>
+            <span class="caption">Instagram</span>
             <img src="./contact/instagram.png" alt="Instagram" />
           </a>
           <a href="./assets/cv-priyank.pdf" target="_blank" title="Curriculum Vitae">
-            <div class="name">Curriculum Vitae</div>
-            <div class="arrow"></div>
+            <span class="caption">Curriculum Vitae</span>
             <img src="./contact/curriculum-vitae.png" alt="Curriculum Vitae" />
           </a>
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" title="YouTube">
-            <div class="name">YouTube</div>
-            <div class="arrow"></div>
+            <span class="caption">YouTube</span>
             <img src="./contact/youtube.png" alt="YouTube" />
           </a>
         </div>
