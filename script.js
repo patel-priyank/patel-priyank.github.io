@@ -7,6 +7,9 @@ const navClose = document.querySelector('#nav-close');
 const navDrawerLinks = document.querySelector('#nav-drawer-links');
 const overlay = document.querySelector('#overlay');
 const heroContainer = document.querySelector('#hero-container');
+const secondarySkillsContainer = document.querySelector('#secondary-skills-container');
+const secondarySkills = document.querySelector('#secondary-skills');
+const toggleSecondarySkills = document.querySelector('#toggle-secondary-skills');
 const youtube = document.querySelector('#youtube');
 
 let lastScrollY = window.scrollY; // default scroll position
@@ -43,7 +46,7 @@ window.addEventListener('resize', () => {
 // update nav styles
 window.addEventListener('scroll', () => {
   // hide nav based on scroll position
-  if (window.scrollY > 0 && window.scrollY > lastScrollY) {
+  if (window.scrollY > nav.clientHeight && window.scrollY > lastScrollY) {
     nav.classList.add('nav-hidden');
   } else {
     nav.classList.remove('nav-hidden');
@@ -79,6 +82,25 @@ window.addEventListener('scroll', () => {
   item.addEventListener('focus', () => {
     nav.classList.remove('nav-hidden');
   });
+});
+
+// toggle secondary skills
+toggleSecondarySkills.addEventListener('click', () => {
+  const secondarySkillsStyles = getComputedStyle(secondarySkills);
+
+  if (secondarySkillsContainer.classList.contains('secondary-skills-shown')) {
+    secondarySkillsContainer.style.maxHeight = '';
+    secondarySkillsContainer.classList.remove('secondary-skills-shown');
+    toggleSecondarySkills.textContent = 'Show more';
+  } else {
+    secondarySkillsContainer.style.maxHeight = `calc(
+      ${secondarySkills.clientHeight}px +
+      ${secondarySkillsStyles.marginTop} +
+      ${secondarySkillsStyles.marginBottom})
+    `;
+    secondarySkillsContainer.classList.add('secondary-skills-shown');
+    toggleSecondarySkills.textContent = 'Show less';
+  }
 });
 
 // prevent default action for youtube link

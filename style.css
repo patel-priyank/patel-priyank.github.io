@@ -298,6 +298,7 @@ main section {
   gap: 1.5rem;
   padding-block: 5rem;
   padding-inline: 1rem;
+  width: 100%;
   overflow-x: hidden;
 
   @media (min-width: 640px) {
@@ -401,7 +402,105 @@ main section {
 }
 
 .skills-content {
-  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  .primary-skills {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    span {
+      padding-bottom: 1rem;
+    }
+
+    @media (min-width: 412px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--text-muted);
+    border-radius: 0.5rem;
+    max-width: 180px;
+    aspect-ratio: 2 / 3;
+    transition: border 0.3s ease-out;
+
+    body:not(.touch) &:hover {
+      border-color: var(--text);
+    }
+
+    @media (min-width: 412px) {
+      max-width: 240px;
+    }
+  }
+
+  .skill-logo {
+    display: grid;
+    place-items: center;
+    background-color: #fcfcfc;
+    border-radius: 0.5rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  img {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+
+    body:not(.touch) .skill & {
+      filter: saturate(0.125);
+      transition: filter 0.3s ease-out;
+    }
+
+    body:not(.touch) .skill:hover & {
+      filter: saturate(1);
+    }
+  }
+
+  .secondary-skills-container {
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+
+    &.secondary-skills-shown {
+      opacity: 1;
+    }
+  }
+
+  .secondary-skills {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    span {
+      border: 1px solid var(--text-muted);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      text-align: center;
+    }
+  }
+
+  .toggle-secondary-skills {
+    margin-top: 2rem;
+  }
 }
 
 .projects {
