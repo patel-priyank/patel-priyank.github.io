@@ -412,10 +412,6 @@ main section {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
 
-    span {
-      padding-bottom: 1rem;
-    }
-
     @media (min-width: 412px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -437,35 +433,48 @@ main section {
     max-width: 180px;
     aspect-ratio: 2 / 3;
     transition: border 0.3s ease-out;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-size: 1rem 1rem;
+      background-position: center;
+      background-image: radial-gradient(circle, var(--text-muted) 2px, transparent 1px);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .skill-logo {
+      display: grid;
+      place-items: center;
+      background-color: #fcfcfc;
+      border-radius: 0.5rem;
+      aspect-ratio: 1 / 1;
+
+      img {
+        width: 80%;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    span {
+      padding-bottom: 1rem;
+    }
 
     body:not(.touch) &:hover {
       border-color: var(--text);
+
+      &::before {
+        opacity: 0.5;
+      }
     }
 
     @media (min-width: 412px) {
       max-width: 240px;
-    }
-  }
-
-  .skill-logo {
-    display: grid;
-    place-items: center;
-    background-color: #fcfcfc;
-    border-radius: 0.5rem;
-    aspect-ratio: 1 / 1;
-  }
-
-  img {
-    width: 80%;
-    aspect-ratio: 1 / 1;
-
-    body:not(.touch) .skill & {
-      filter: saturate(0.125);
-      transition: filter 0.3s ease-out;
-    }
-
-    body:not(.touch) .skill:hover & {
-      filter: saturate(1);
     }
   }
 
