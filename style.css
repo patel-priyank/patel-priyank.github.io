@@ -445,7 +445,8 @@ main section {
       background-position: center;
       background-image: radial-gradient(circle, var(--text-muted) 2px, transparent 1px);
       opacity: 0;
-      transition: opacity 0.3s ease-out;
+      scale: 1.25;
+      transition: opacity 0.3s ease-out, scale 0.3s ease-out;
     }
 
     .skill-logo {
@@ -470,6 +471,7 @@ main section {
 
       &::before {
         opacity: 0.5;
+        scale: 1;
       }
     }
 
