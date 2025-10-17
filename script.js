@@ -15,7 +15,6 @@ const heroContainer = document.querySelector('#hero-container');
 const secondarySkillsContainer = document.querySelector('#secondary-skills-container');
 const secondarySkills = document.querySelector('#secondary-skills');
 const toggleSecondarySkills = document.querySelector('#toggle-secondary-skills');
-const youtube = document.querySelector('#youtube');
 
 navDrawerLinks.innerHTML = navLinks.innerHTML; // nav drawer links mirror nav links
 
@@ -140,12 +139,6 @@ toggleSecondarySkills.addEventListener('click', () => {
     `;
     secondarySkillsContainer.classList.add('secondary-skills-shown');
   }
-});
-
-// prevent default action for youtube link
-youtube.addEventListener('click', e => {
-  e.preventDefault();
-  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 });
 
 // add theme radios on load
