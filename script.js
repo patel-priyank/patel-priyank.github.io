@@ -2,9 +2,14 @@ const body = document.querySelector('body');
 const nav = document.querySelector('nav');
 const navLinks = document.querySelector('#nav-links');
 const navMenu = document.querySelector('#nav-menu');
+const navDrawer = document.querySelector('#nav-drawer');
 const navCloseContainer = document.querySelector('#nav-close-container');
 const navClose = document.querySelector('#nav-close');
 const navDrawerLinks = document.querySelector('#nav-drawer-links');
+const themeDrawer = document.querySelector('#theme-drawer');
+const themeCloseContainer = document.querySelector('#theme-close-container');
+const themeClose = document.querySelector('#theme-close');
+const themes = document.querySelector('#themes');
 const overlay = document.querySelector('#overlay');
 const heroContainer = document.querySelector('#hero-container');
 const secondarySkillsContainer = document.querySelector('#secondary-skills-container');
@@ -12,15 +17,18 @@ const secondarySkills = document.querySelector('#secondary-skills');
 const toggleSecondarySkills = document.querySelector('#toggle-secondary-skills');
 const youtube = document.querySelector('#youtube');
 
+navDrawerLinks.innerHTML = navLinks.innerHTML; // nav drawer links mirror nav links
+
+const themeSwitcherBtns = document.querySelectorAll('.theme-switcher');
+
 let lastScrollY = window.scrollY; // default scroll position
 
 // update heights for elements based on nav
 const updateHeights = () => {
   navCloseContainer.style.height = `${nav.clientHeight}px`;
+  themeCloseContainer.style.height = `${nav.clientHeight}px`;
   heroContainer.style.marginTop = `${nav.clientHeight / 2}px`;
 };
-
-navDrawerLinks.innerHTML = navLinks.innerHTML; // nav drawer links mirror nav links
 
 // open nav drawer on click of menu
 navMenu.addEventListener('click', () => {
@@ -32,14 +40,45 @@ navClose.addEventListener('click', () => {
   body.classList.remove('nav-drawer-open');
 });
 
+// open theme drawer on click of theme switcher
+themeSwitcherBtns.forEach(button =>
+  button.addEventListener('click', () => {
+    // hide nav drawer and add delay before opening theme drawer
+    if (navDrawer.contains(button)) {
+      themeDrawer.style.transitionDelay = '0.3s';
+      body.classList.remove('nav-drawer-open');
+    }
+
+    body.classList.add('theme-drawer-open');
+  })
+);
+
+// remove transition delay for theme drawer when closed
+new MutationObserver(mutations => {
+  for (const mutation of mutations) {
+    if (mutation.attributeName === 'class') {
+      const body = mutation.target;
+
+      if (!body.classList.contains('theme-drawer-open')) {
+        themeDrawer.style.transitionDelay = '';
+      }
+    }
+  }
+}).observe(document.body, { attributes: true });
+
+// close theme drawer on click of close
+themeClose.addEventListener('click', () => {
+  body.classList.remove('theme-drawer-open');
+});
+
 // close nav drawer on click of overlay
 overlay.addEventListener('click', () => {
-  body.classList.remove('nav-drawer-open');
+  body.classList.remove('nav-drawer-open', 'theme-drawer-open');
 });
 
 // close nav drawer on window resize
 window.addEventListener('resize', () => {
-  body.classList.remove('nav-drawer-open');
+  body.classList.remove('nav-drawer-open', 'theme-drawer-open');
   updateHeights();
 });
 
@@ -69,7 +108,7 @@ window.addEventListener('scroll', () => {
     e.preventDefault();
 
     // hide nav drawer
-    if (anchor.closest('#nav-drawer')) {
+    if (navDrawer.contains(anchor)) {
       body.classList.remove('nav-drawer-open');
     }
 
@@ -109,4 +148,49 @@ youtube.addEventListener('click', e => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 });
 
-updateHeights(); // update heights on load
+// add theme radios on load
+THEMES.forEach((theme, index) => {
+  const label = document.createElement('label');
+  label.classList.add('theme');
+
+  const input = document.createElement('input');
+  input.setAttribute('type', 'radio');
+  input.setAttribute('name', 'theme');
+  input.value = index;
+
+  const themeImg = document.createElement('div');
+  themeImg.classList.add('theme-img');
+
+  const spanBg = document.createElement('span');
+  spanBg.style.backgroundColor = theme.bg;
+
+  const spanAccent = document.createElement('span');
+  spanAccent.style.backgroundColor = theme.accent;
+
+  themeImg.appendChild(spanBg);
+  themeImg.appendChild(spanAccent);
+
+  label.appendChild(input);
+  label.appendChild(themeImg);
+
+  themes.appendChild(label);
+
+  input.addEventListener('change', () => {
+    document.documentElement.style.setProperty('--bg', theme.bg);
+    document.documentElement.style.setProperty('--shadow', theme.shadow);
+    document.documentElement.style.setProperty('--text', theme.text);
+    document.documentElement.style.setProperty('--text-muted', theme.textMuted);
+    document.documentElement.style.setProperty('--accent', theme.accent);
+
+    localStorage.setItem('theme', index);
+  });
+});
+
+// apply theme on load
+const themeValue = Number(localStorage.getItem('theme')) || 0;
+const selectedTheme = themes.querySelector(`input[value="${themeValue}"]`);
+selectedTheme.checked = true;
+selectedTheme.dispatchEvent(new Event('change'));
+
+// update heights when fonts are loaded
+document.fonts.ready.then(() => updateHeights());

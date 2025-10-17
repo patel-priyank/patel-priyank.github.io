@@ -6,7 +6,7 @@
   --text: hsl(0, 0%, 90%);
   --text-muted: hsl(0, 0%, 45%);
   --accent: hsl(60, 80%, 60%);
-  --nav-drawer-open-filter: blur(8px) brightness(0.75);
+  --drawer-open-filter: blur(8px);
 }
 
 *,
@@ -37,7 +37,8 @@ body {
   color: var(--text);
   font-family: 'Archivo', sans-serif;
 
-  &.nav-drawer-open {
+  &.nav-drawer-open,
+  &.theme-drawer-open {
     overflow-y: hidden;
   }
 }
@@ -93,10 +94,13 @@ a {
 }
 
 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Archivo', sans-serif;
   font-size: 0.9375rem;
   border: 1px solid var(--accent);
-  background-color: var(--bg);
+  background-color: transparent;
   color: var(--accent);
   border-radius: 100vmax;
   padding: 0.5rem 1rem;
@@ -140,8 +144,9 @@ nav {
     box-shadow: 0 0 16px var(--shadow);
   }
 
-  body.nav-drawer-open & {
-    filter: var(--nav-drawer-open-filter);
+  body.nav-drawer-open &,
+  body.theme-drawer-open & {
+    filter: var(--drawer-open-filter);
   }
 }
 
@@ -175,7 +180,6 @@ nav {
 .nav-links {
   display: none;
   align-items: center;
-  gap: 1.5rem;
   margin: 0;
   padding: 0;
 
@@ -190,11 +194,13 @@ nav {
 }
 
 .nav-menu,
-.nav-close {
+.nav-close,
+.theme-close {
   border: none;
   color: var(--accent);
   padding: 0;
   font-size: 1.25rem;
+  aspect-ratio: 1 / 1;
 
   body:not(.touch) &:hover,
   &:focus-visible {
@@ -214,13 +220,14 @@ nav {
   }
 }
 
-.nav-drawer {
-  --nav-drawer-width: min(320px, 75vw);
+.nav-drawer,
+.theme-drawer {
+  --drawer-width: min(320px, 75vw);
 
   position: fixed;
   bottom: 0;
-  right: calc(var(--nav-drawer-width) * -1.25);
-  width: var(--nav-drawer-width);
+  right: calc(var(--drawer-width) * -1.25);
+  width: var(--drawer-width);
   height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -228,7 +235,9 @@ nav {
   box-shadow: 0 0 16px var(--shadow);
   z-index: 110;
   transition: right 0.3s ease-out;
+}
 
+.nav-drawer {
   @media (min-width: 640px) {
     display: none;
   }
@@ -238,19 +247,99 @@ nav {
   }
 }
 
-.nav-close-container {
+.theme-drawer {
+  body.theme-drawer-open & {
+    right: 0;
+  }
+}
+
+.nav-close-container,
+.theme-close-container {
   display: flex;
   align-self: flex-end;
   padding: 1rem;
 }
 
-.nav-drawer-links {
+.nav-drawer-links,
+.themes {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
   flex-grow: 1;
   padding: 2rem;
+}
+
+.theme {
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -0.25rem;
+    top: -0.25rem;
+    height: calc(100% + 0.5rem);
+    width: calc(100% + 0.5rem);
+    background-color: var(--accent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  body:not(.touch) &:hover::before {
+    opacity: 1;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+
+    &:checked ~ .theme-img::before,
+    &:checked ~ .theme-img::after {
+      display: block;
+    }
+
+    &:focus-visible ~ .theme-img {
+      outline: 1px dashed var(--accent);
+      outline-offset: 4px;
+    }
+  }
+
+  .theme-img {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border: 1px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--text-muted);
+    position: relative;
+
+    &::before,
+    &::after {
+      font-family: Phosphor;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      display: none;
+    }
+
+    &::before {
+      content: '\E13A';
+      left: -1.5rem;
+    }
+
+    &::after {
+      content: '\E138';
+      right: -1.5rem;
+    }
+
+    span {
+      height: 2rem;
+      min-width: 1rem;
+    }
+  }
 }
 
 .overlay {
@@ -259,7 +348,8 @@ nav {
   display: none;
   z-index: 105;
 
-  body.nav-drawer-open & {
+  body.nav-drawer-open &,
+  body.theme-drawer-open & {
     display: block;
   }
 }
@@ -267,8 +357,9 @@ nav {
 main {
   transition: filter 0.3s ease-out;
 
-  body.nav-drawer-open & {
-    filter: var(--nav-drawer-open-filter);
+  body.nav-drawer-open &,
+  body.theme-drawer-open & {
+    filter: var(--drawer-open-filter);
   }
 }
 
@@ -312,7 +403,7 @@ main section {
     &::before {
       font-family: Phosphor;
       position: absolute;
-      content: '\E13A';
+      content: '\E03C';
       left: 0;
       top: 50%;
       transform: translateY(-50%);
@@ -457,7 +548,7 @@ main section {
       aspect-ratio: 1 / 1;
 
       img {
-        width: 80%;
+        width: 65%;
         aspect-ratio: 1 / 1;
       }
     }
