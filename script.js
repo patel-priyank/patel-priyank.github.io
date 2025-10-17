@@ -142,14 +142,17 @@ toggleSecondarySkills.addEventListener('click', () => {
 });
 
 // add theme radios on load
-THEMES.forEach((theme, index) => {
+THEMES.forEach(theme => {
+  const themeDiv = document.createElement('div');
+  themeDiv.classList.add('theme');
+
   const label = document.createElement('label');
-  label.classList.add('theme');
+  label.classList.add('theme-label');
 
   const input = document.createElement('input');
   input.setAttribute('type', 'radio');
   input.setAttribute('name', 'theme');
-  input.value = index;
+  input.value = theme.name;
 
   const themeImg = document.createElement('div');
   themeImg.classList.add('theme-img');
@@ -160,13 +163,20 @@ THEMES.forEach((theme, index) => {
   const spanAccent = document.createElement('span');
   spanAccent.style.backgroundColor = theme.accent;
 
+  const themeName = document.createElement('span');
+  themeName.classList.add('theme-name');
+  themeName.textContent = theme.name;
+
   themeImg.appendChild(spanBg);
   themeImg.appendChild(spanAccent);
 
   label.appendChild(input);
   label.appendChild(themeImg);
 
-  themes.appendChild(label);
+  themeDiv.appendChild(label);
+  themeDiv.appendChild(themeName);
+
+  themes.appendChild(themeDiv);
 
   input.addEventListener('change', () => {
     document.documentElement.style.setProperty('--bg', theme.bg);
@@ -175,13 +185,14 @@ THEMES.forEach((theme, index) => {
     document.documentElement.style.setProperty('--text-muted', theme.textMuted);
     document.documentElement.style.setProperty('--accent', theme.accent);
 
-    localStorage.setItem('theme', index);
+    localStorage.setItem('theme', theme.name);
   });
 });
 
 // apply theme on load
-const themeValue = Number(localStorage.getItem('theme')) || 0;
-const selectedTheme = themes.querySelector(`input[value="${themeValue}"]`);
+const storedTheme = THEMES.find(theme => theme.name === localStorage.getItem('theme'));
+const themeName = storedTheme ? storedTheme.name : THEMES[0].name;
+const selectedTheme = themes.querySelector(`input[value="${themeName}"]`);
 selectedTheme.checked = true;
 selectedTheme.dispatchEvent(new Event('change'));
 
