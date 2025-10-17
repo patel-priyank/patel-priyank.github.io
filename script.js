@@ -130,6 +130,8 @@ toggleSecondarySkills.addEventListener('click', () => {
   if (secondarySkillsContainer.classList.contains('secondary-skills-shown')) {
     secondarySkillsContainer.style.maxHeight = '';
     secondarySkillsContainer.classList.remove('secondary-skills-shown');
+
+    scrollBy({ top: -secondarySkillsContainer.scrollHeight });
   } else {
     secondarySkillsContainer.style.maxHeight = `calc(
       ${secondarySkills.clientHeight}px +
