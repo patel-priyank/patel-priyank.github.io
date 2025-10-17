@@ -10,6 +10,7 @@ const themeDrawer = document.querySelector('#theme-drawer');
 const themeCloseContainer = document.querySelector('#theme-close-container');
 const themeClose = document.querySelector('#theme-close');
 const themes = document.querySelector('#themes');
+const toggleCRT = document.querySelector('#toggle-crt');
 const overlay = document.querySelector('#overlay');
 const heroContainer = document.querySelector('#hero-container');
 const secondarySkillsContainer = document.querySelector('#secondary-skills-container');
@@ -173,7 +174,7 @@ THEMES.forEach((theme, index) => {
   label.appendChild(input);
   label.appendChild(themeImg);
 
-  themes.appendChild(label);
+  themes.insertBefore(label, toggleCRT);
 
   input.addEventListener('change', () => {
     document.documentElement.style.setProperty('--bg', theme.bg);
@@ -186,11 +187,27 @@ THEMES.forEach((theme, index) => {
   });
 });
 
+// toggle CRT effect
+toggleCRT.addEventListener('click', () => {
+  body.classList.toggle('crt');
+
+  if (body.classList.contains('crt')) {
+    localStorage.setItem('crt', 'on');
+  } else {
+    localStorage.removeItem('crt');
+  }
+});
+
 // apply theme on load
 const themeValue = Number(localStorage.getItem('theme')) || 0;
 const selectedTheme = themes.querySelector(`input[value="${themeValue}"]`);
 selectedTheme.checked = true;
 selectedTheme.dispatchEvent(new Event('change'));
+
+// apply CRT on load
+if (localStorage.getItem('crt') === 'on') {
+  body.classList.add('crt');
+}
 
 // update heights when fonts are loaded
 document.fonts.ready.then(() => updateHeights());
