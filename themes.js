@@ -24,14 +24,14 @@ const THEMES = [
     bg: 'hsl(210, 60%, 97.5%)',
     shadow: 'hsl(210, 30%, 75%)',
     text: 'hsl(35, 30%, 10%)',
-    textMuted: 'hsl(35, 10%, 45%)',
+    textMuted: 'hsl(35, 10%, 55%)',
     accent: 'hsl(160, 70%, 45%)'
   },
   {
     bg: 'hsl(45, 100%, 97.5%)',
     shadow: 'hsl(45, 40%, 75%)',
     text: 'hsl(30, 30%, 10%)',
-    textMuted: 'hsl(30, 10%, 45%)',
+    textMuted: 'hsl(30, 10%, 55%)',
     accent: 'hsl(340, 80%, 55%)'
   }
 ];
