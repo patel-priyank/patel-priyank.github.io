@@ -6,7 +6,6 @@
   --text: hsl(0, 0%, 90%);
   --text-muted: hsl(0, 0%, 45%);
   --accent: hsl(60, 80%, 60%);
-  --drawer-open-filter: blur(8px);
 }
 
 *,
@@ -135,7 +134,7 @@ nav {
   width: 100%;
   background-color: var(--bg);
   z-index: 100;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, filter 0.3s ease-out;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 
   &.nav-hidden {
     transform: translateY(-125%);
@@ -143,11 +142,6 @@ nav {
 
   &.nav-shadow {
     box-shadow: 0 0 16px var(--shadow);
-  }
-
-  body.nav-drawer-open &,
-  body.theme-drawer-open & {
-    filter: var(--drawer-open-filter);
   }
 }
 
@@ -358,21 +352,16 @@ nav {
 .overlay {
   position: fixed;
   inset: 0;
-  display: none;
+  backdrop-filter: blur(8px) brightness(0.5);
+  pointer-events: none;
   z-index: 105;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 
   body.nav-drawer-open &,
   body.theme-drawer-open & {
-    display: block;
-  }
-}
-
-main {
-  transition: filter 0.3s ease-out;
-
-  body.nav-drawer-open &,
-  body.theme-drawer-open & {
-    filter: var(--drawer-open-filter);
+    opacity: 1;
+    pointer-events: all;
   }
 }
 
