@@ -602,6 +602,10 @@ main section {
 
     &.secondary-skills-shown {
       opacity: 1;
+
+      ~ .toggle-secondary-skills i {
+        rotate: 180deg;
+      }
     }
   }
 
@@ -625,6 +629,10 @@ main section {
 
   .toggle-secondary-skills {
     margin-top: 2rem;
+
+    i {
+      transition: rotate 0.3s ease-out;
+    }
   }
 }
 

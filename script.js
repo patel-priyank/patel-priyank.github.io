@@ -131,7 +131,6 @@ toggleSecondarySkills.addEventListener('click', () => {
   if (secondarySkillsContainer.classList.contains('secondary-skills-shown')) {
     secondarySkillsContainer.style.maxHeight = '';
     secondarySkillsContainer.classList.remove('secondary-skills-shown');
-    toggleSecondarySkills.textContent = 'Show more';
   } else {
     secondarySkillsContainer.style.maxHeight = `calc(
       ${secondarySkills.clientHeight}px +
@@ -139,7 +138,6 @@ toggleSecondarySkills.addEventListener('click', () => {
       ${secondarySkillsStyles.marginBottom})
     `;
     secondarySkillsContainer.classList.add('secondary-skills-shown');
-    toggleSecondarySkills.textContent = 'Show less';
   }
 });
 
