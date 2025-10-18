@@ -29,7 +29,7 @@ const THEMES = [
     shadow: 'hsl(210, 30%, 75%)',
     text: 'hsl(35, 30%, 10%)',
     textMuted: 'hsl(35, 10%, 55%)',
-    accent: 'hsl(160, 70%, 45%)'
+    accent: 'hsl(160, 90%, 35%)'
   },
   {
     name: 'Jigglypuff',
