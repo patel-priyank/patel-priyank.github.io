@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priyank Patel</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="loading">
+    <script>
+      // detect touchscreen device
+      const detectTouchscreen = () => {
+        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+        document.body.classList.toggle('touch', isTouch);
+      };
+
+      detectTouchscreen();
+
+      window.addEventListener('resize', detectTouchscreen);
+    </script>
+
+    <noscript>
+      <p>Please enable JavaScript to continue using this site.</p>
+    </noscript>
+
+    <div class="loader">
+      <img src="./assets/loader.svg" alt="Loader" />
+    </div>
+
+    <nav>
+      <div class="nav-container">
+        <a href="/" class="brand">Priyank</a>
+
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#links">Links</a></li>
+          <li><button class="theme-switcher">Theme</button></li>
+        </ul>
+
+        <button id="nav-menu" class="nav-menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </nav>
+
+    <aside id="nav-drawer" class="nav-drawer">
+      <div id="nav-close-container" class="nav-close-container">
+        <button id="nav-close" class="nav-close">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+
+      <ul id="nav-drawer-links" class="nav-links nav-drawer-links"></ul>
+    </aside>
+
+    <aside id="theme-drawer" class="theme-drawer">
+      <div id="theme-close-container" class="theme-close-container">
+        <button id="theme-close" class="theme-close">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+
+      <div id="themes" class="themes"></div>
+    </aside>
+
+    <div id="overlay" class="overlay"></div>
+
+    <main>
+      <section id="hero" class="hero">
+        <div id="hero-container" class="section-container">
+          <div class="hero-content">
+            <p>Hello, my name is</p>
+            <h1>Priyank Patel</h1>
+            <h2>I make your websites look better.</h2>
+            <p>
+              I am a full-stack and frontend developer, passionate about building intuitive, human-centered web apps. I
+              recently completed my master's, and am now seeking UK tech opportunities to create impactful digital
+              experiences.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="section-container">
+          <h3>About me</h3>
+
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                I'm a software developer with 5+ years of experience crafting user-centric solutions and recently
+                completed my <span class="highlight">MSc in Software Development</span>. My journey has taken me from
+                <span class="highlight">full-stack</span> to <span class="highlight">frontend</span> development,
+                collaborating with amazing teams across industries like Oil & Gas and Food & Beverages.
+              </p>
+
+              <p>
+                These days, I'm diving deeper into <span class="highlight">UX fundamentals</span> to better understand
+                not just the tech side, but also the people side of building meaningful products. Beyond code, I enjoy
+                doodling quirky stuff, capturing moments through photography, and, of course, indulging in a good cat
+                video binge on YouTube. Whether I'm exploring new styles in my sketches or finding the perfect shot
+                through my camera lens, I love letting creativity take the lead.
+              </p>
+
+              <p>
+                Feel free to explore my work — I'd love to hear your thoughts or collaborate on something exciting.
+                Let's build something incredible together!
+              </p>
+            </div>
+
+            <div class="about-picture">
+              <img src="./assets/profile-photo.jpg" alt="Profile photo" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <div class="section-container">
+          <h3>What I know</h3>
+
+          <div class="skills-content">
+            <div class="primary-skills">
+              <div class="skill">
+                <div class="skill-logo">
+                  <img src="./assets/skills/react.png" alt="React logo" />
+                </div>
+                <span>React</span>
+              </div>
+
+              <div class="skill">
+                <div class="skill-logo">
+                  <img src="./assets/skills/angular.png" alt="Angular logo" />
+                </div>
+                <span>Angular</span>
+              </div>
+
+              <div class="skill">
+                <div class="skill-logo">
+                  <img src="./assets/skills/node-js.png" alt="Node.js logo" />
+                </div>
+                <span>Node.js</span>
+              </div>
+
+              <div class="skill">
+                <div class="skill-logo">
+                  <img src="./assets/skills/java.png" alt="Java logo" />
+                </div>
+                <span>Java</span>
+              </div>
+
+              <div class="skill">
+                <div class="skill-logo">
+                  <img src="./assets/skills/mongodb.png" alt="MongoDB logo" />
+                </div>
+                <span>MongoDB</span>
+              </div>
+
+              <div class="skill">
+                <div class="skill-logo">
+                  <img src="./assets/skills/mysql.png" alt="MySQL logo" />
+                </div>
+                <span>MySQL</span>
+              </div>
+            </div>
+
+            <div id="secondary-skills-container" class="secondary-skills-container">
+              <div id="secondary-skills" class="secondary-skills">
+                <span>Express</span>
+                <span>TypeScript</span>
+                <span>JavaScript</span>
+                <span>jQuery</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Sass</span>
+                <span>Bootstrap</span>
+                <span>Shopify Liquid</span>
+                <span>.NET Core</span>
+                <span>C#</span>
+                <span>C++</span>
+                <span>C</span>
+                <span>SQL Server</span>
+                <span>Git</span>
+              </div>
+            </div>
+
+            <button id="toggle-secondary-skills" class="toggle-secondary-skills">
+              <i class="ph ph-caret-down"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="section-container">
+          <h3>Some things I've made</h3>
+
+          <div class="projects-content">
+            <div class="project">
+              <img src="./assets/projects/find-a-qub-room.jpg" alt="Find a QUB Room screenshot" />
+
+              <div class="project-info">
+                <div class="project-title">Find a QUB Room</div>
+                <div class="project-description">
+                  Navigate the QUB campus, explore new places and events, and suggest changes. Built with Express and
+                  React.
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/patel-priyank/Find-A-QUB-Room" target="_blank">Browse code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="./assets/projects/svg-to-png.jpg" alt="SVG to PNG screenshot" />
+
+              <div class="project-info">
+                <div class="project-title">SVG to PNG</div>
+                <div class="project-description">
+                  Convert SVG code into PNG images of specified dimensions. Built with React and vanilla JavaScript.
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/patel-priyank/SVG-to-PNG" target="_blank">Browse code</a>
+                <a href="https://patel-priyank.github.io/SVG-to-PNG/" target="_blank">Try it out</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="./assets/projects/infinite-wallpapers.jpg" alt="Infinite Wallpapers screenshot" />
+
+              <div class="project-info">
+                <div class="project-title">Infinite Wallpapers</div>
+                <div class="project-description">
+                  Load wallpapers from Unsplash with infinite scroll. Built with HTML, CSS, and JavaScript using the
+                  Unsplash API.
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/patel-priyank/Infinite-Wallpapers" target="_blank">Browse code</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="./assets/projects/pastel-color-generator.jpg" alt="Pastel Color Generator screenshot" />
+
+              <div class="project-info">
+                <div class="project-title">Pastel Color Generator</div>
+                <div class="project-description">
+                  Generate beautiful pastel colours and use them in your applications. Built with HTML, CSS, and
+                  JavaScript.
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/patel-priyank/Pastel-Color-Generator" target="_blank">Browse code</a>
+                <a href="https://patel-priyank.github.io/Pastel-Color-Generator/" target="_blank">Try it out</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="./assets/projects/music-player.jpg" alt="Music Player screenshot" />
+
+              <div class="project-info">
+                <div class="project-title">Music Player</div>
+                <div class="project-description">
+                  Listen to some soothing music in a web-based music player. Built with HTML, CSS, and JavaScript.
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/patel-priyank/Music-Player" target="_blank">Browse code</a>
+                <a href="https://patel-priyank.github.io/Music-Player/" target="_blank">Try it out</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="./assets/projects/switcher.jpg" alt="Switcher screenshot" />
+
+              <div class="project-info">
+                <div class="project-title">Switcher</div>
+                <div class="project-description">
+                  Toggle between options and see how your choices affect the outcome. Built with HTML, CSS, and
+                  JavaScript.
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/patel-priyank/Switcher" target="_blank">Browse code</a>
+                <a href="https://patel-priyank.github.io/Switcher/" target="_blank">Try it out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="links" class="links">
+        <div class="section-container">
+          <div class="links-content">
+            <a href="mailto:patel23priyank@gmail.com" target="_blank">
+              <i class="ph ph-at"></i>
+              <span>Email</span>
+            </a>
+            <a href="https://github.com/patel-priyank?tab=repositories&sort=name" target="_blank">
+              <i class="ph ph-github-logo"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://codepen.io/priyankpatel/pens/public" target="_blank">
+              <i class="ph ph-codepen-logo"></i>
+              <span>CodePen</span>
+            </a>
+            <a href="https://www.linkedin.com/in/patel23priyank/" target="_blank">
+              <i class="ph ph-linkedin-logo"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/_ig.priyank/" target="_blank">
+              <i class="ph ph-instagram-logo"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="./assets/CV-Priyank.pdf" target="_blank">
+              <i class="ph ph-file-text"></i>
+              <span>CV / Resume</span>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+              <i class="ph ph-youtube-logo"></i>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./themes.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
