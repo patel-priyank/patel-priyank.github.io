@@ -590,7 +590,7 @@ main section {
       display: grid;
       place-items: center;
       background-color: #fcfcfc;
-      border-radius: 0.25rem;
+      border-radius: 0.375rem;
       aspect-ratio: 1 / 1;
 
       img {
@@ -600,7 +600,20 @@ main section {
     }
 
     span {
-      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -0.5rem;
+        left: -0.5rem;
+        height: calc(100% + 1rem);
+        width: calc(100% + 1rem);
+        background-color: var(--bg);
+        z-index: -1;
+        filter: blur(4px);
+      }
     }
 
     body:not(.touch) &:hover {
