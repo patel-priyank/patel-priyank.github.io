@@ -168,13 +168,6 @@ toggleSecondarySkills.addEventListener('click', () => {
   }
 });
 
-// scroll up to keep toggle secondary skills button in view
-secondarySkillsContainer.addEventListener('transitionend', () => {
-  if (!secondarySkillsContainer.classList.contains('secondary-skills-shown')) {
-    scrollBy({ top: -secondarySkillsContainer.scrollHeight });
-  }
-});
-
 // add theme radios on load
 THEMES.forEach(theme => {
   const themeDiv = document.createElement('div');
