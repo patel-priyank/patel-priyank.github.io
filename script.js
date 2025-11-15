@@ -69,6 +69,27 @@ const updateTabIndices = () => {
   }
 };
 
+// update theme
+const updateTheme = theme => {
+  const update = () => {
+    document.documentElement.style.setProperty('--bg', theme.bg);
+    document.documentElement.style.setProperty('--shadow', theme.shadow);
+    document.documentElement.style.setProperty('--text', theme.text);
+    document.documentElement.style.setProperty('--text-muted', theme.textMuted);
+    document.documentElement.style.setProperty('--accent', theme.accent);
+  };
+
+  if (document.startViewTransition) {
+    document.startViewTransition(() => {
+      update();
+    });
+  } else {
+    update();
+  }
+
+  localStorage.setItem('theme', theme.name);
+};
+
 // open nav drawer on click of menu
 navMenu.addEventListener('click', () => {
   body.classList.add('nav-drawer-open');
@@ -205,15 +226,7 @@ THEMES.forEach(theme => {
 
   themes.appendChild(themeDiv);
 
-  input.addEventListener('change', () => {
-    document.documentElement.style.setProperty('--bg', theme.bg);
-    document.documentElement.style.setProperty('--shadow', theme.shadow);
-    document.documentElement.style.setProperty('--text', theme.text);
-    document.documentElement.style.setProperty('--text-muted', theme.textMuted);
-    document.documentElement.style.setProperty('--accent', theme.accent);
-
-    localStorage.setItem('theme', theme.name);
-  });
+  input.addEventListener('change', () => updateTheme(theme));
 });
 
 // apply theme on load
